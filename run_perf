@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+set -x
+stack clean
+stack build
+stack exec vector-perf
+stack clean
+stack build --fast
+stack stack exec vector-perf
